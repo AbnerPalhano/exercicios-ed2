@@ -1,0 +1,3 @@
+Pré-Ordem: a, b, d, c, e, f
+In-Ordem: b, d, a, e, c, f
+Pós-Ordem: d, b, e, f, c, a
