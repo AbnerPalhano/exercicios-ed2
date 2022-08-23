@@ -68,10 +68,10 @@ void pos_ordem(Arvore* a){
 int pertence_arv (Arvore *a, char c){
     int i;
     if(a->info == c){
-        i = 1;
+        return 1;
     }
     else{
-        i=0;
+        i= 0;
     }
     if(!verifica_arv_vazia(a->esq)){
         i+=pertence_arv(a->esq, c);
@@ -86,7 +86,7 @@ int pertence_arv (Arvore *a, char c){
 //========= Exercício 4 - conta nós ====
 
 int conta_nos (Arvore *a){
-    int i;
+    int i=0;
     if(!verifica_arv_vazia(a)){
         i=1;
     }
@@ -108,8 +108,6 @@ int calcula_altura_arvore (Arvore *a){
     if(verifica_arv_vazia(a)){
         return -1;
     }
-
-
         i++;
         i+=(calcula_altura_arvore(a->esq)>calcula_altura_arvore(a->dir)) ?
          calcula_altura_arvore(a->esq) : calcula_altura_arvore(a->dir);
@@ -157,7 +155,12 @@ int main (int argc, char *argv[]) {
     pos_ordem(a);
     printf("\n");
 
-    printf("%d\n", pertence_arv(a, 'f'));
+    printf("pertence a: %d\n", pertence_arv(a, 'a'));
+    printf("pertence b: %d\n", pertence_arv(a, 'b'));
+    printf("pertence c: %d\n", pertence_arv(a, 'c'));
+    printf("pertence d: %d\n", pertence_arv(a, 'd'));
+    printf("pertence e: %d\n", pertence_arv(a, 'e'));
+    printf("pertence f: %d\n", pertence_arv(a, 'f'));
     
     printf("numero de nos: %d\n", conta_nos(a));
 
